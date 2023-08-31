@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('test_scores', function (Blueprint $table) {
             $table->id();
+            $table->string('topic');
+            $table->string('description');
+            $table->string('result');
             $table->timestamps();
         });
     }

@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('certifications', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('issue_date');
-            $table->string('description');
-            $table->string('link')->nullable();
+            $table->string('languages')->nullable();
+            $table->string('frameworks')->nullable();
+            $table->string('softwares')->nullable();
+            $table->string('operating_systems')->nullable();
+            $table->string('databases')->nullable();
+            $table->string('extra')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('certifications');
+        Schema::dropIfExists('skills');
     }
 };

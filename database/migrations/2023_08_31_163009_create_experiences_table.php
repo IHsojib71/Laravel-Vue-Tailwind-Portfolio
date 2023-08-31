@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
+            $table->string('organization');
+            $table->string('role');
+            $table->string('duration');
+            $table->string('milestones');
+            $table->string('note')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

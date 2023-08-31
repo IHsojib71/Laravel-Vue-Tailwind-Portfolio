@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('acheivements', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('date');
+            $table->string('description');
             $table->timestamps();
         });
     }

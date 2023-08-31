@@ -1,6 +1,15 @@
 <?php
 
+use App\Http\Controllers\AcheivementController;
+use App\Http\Controllers\BasicInformationController;
+use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ResearchController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\TestScoreController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,6 +42,36 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
+
+    Route::get('basic-information/edit', [BasicInformationController::class, 'edit'])->name('basic.edit');
+    Route::get('basic-information/update', [BasicInformationController::class, 'update'])->name('basic.update');
+
+    Route::get('education/edit', [EducationController::class, 'edit'])->name('education.edit');
+    Route::get('education/update', [EducationController::class, 'update'])->name('education.update');
+
+    Route::get('experience/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
+    Route::get('experience/update', [ExperienceController::class, 'update'])->name('experience.update');
+
+    Route::get('research/edit', [ResearchController::class, 'edit'])->name('research.edit');
+    Route::get('research/update', [ResearchController::class, 'update'])->name('research.update');
+
+    Route::get('tests/edit', [TestScoreController::class, 'edit'])->name('tests.edit');
+    Route::get('tests/update', [TestScoreController::class, 'update'])->name('tests.update');
+
+    Route::get('project/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::get('project/update', [ProjectController::class, 'update'])->name('project.update');
+
+    Route::get('skill/edit', [SkillController::class, 'edit'])->name('skill.edit');
+    Route::get('skill/update', [SkillController::class, 'update'])->name('skill.update');
+
+    Route::get('acheivement/edit', [AcheivementController::class, 'edit'])->name('acheivement.edit');
+    Route::get('acheivement/update', [ExperienceController::class, 'update'])->name('acheivement.update');
+
+    Route::get('certification/edit', [CertificationController::class, 'edit'])->name('certification.edit');
+    Route::get('certification/update', [CertificationController::class, 'update'])->name('certification.update');
 });
 
 require __DIR__.'/auth.php';
