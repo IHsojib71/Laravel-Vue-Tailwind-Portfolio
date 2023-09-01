@@ -37,7 +37,8 @@
                         <td class="px-6 py-4">{{education.institute}}</td>
                         <td class="px-6 py-4">{{education.result ? education.result : 'N/A'}}</td>
                         <td class="px-6 py-4">{{education.course_works ? education.course_works : 'N/A'}}</td>
-                        <td class="px-6 py-4">{{education.link ? education.link : 'N/A'}} </td>
+                        <td class="px-6 py-4">{{education.link ? education.link : 'N/A'}} 
+                        </td>
                         <td class="px-6 py-4">
                             <Link :href="route('education.edit', education)"> <font-awesome-icon class="text-green-500 mr-2" title="Edit" icon="fa-solid fa-pencil" /></Link>
                             <Link method="delete" :href="route('education.destroy', education)"><font-awesome-icon title="Delete" class="text-red-500 ml-2" icon="fa-solid fa-trash-can" /></Link>
