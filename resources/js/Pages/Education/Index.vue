@@ -35,12 +35,12 @@
                         <td class="px-6 py-4">{{education.course_duration}}</td>
                         <td class="px-6 py-4">{{education.passing_year}}</td>
                         <td class="px-6 py-4">{{education.institute}}</td>
-                        <td class="px-6 py-4">{{education.result}}</td>
-                        <td class="px-6 py-4">{{education.course_works}}</td>
-                        <td class="px-6 py-4">{{education.link}}</td>
+                        <td class="px-6 py-4">{{education.result ? education.result : 'N/A'}}</td>
+                        <td class="px-6 py-4">{{education.course_works ? education.course_works : 'N/A'}}</td>
+                        <td class="px-6 py-4">{{education.link ? education.link : 'N/A'}} </td>
                         <td class="px-6 py-4">
-                            <Link :href="route('education.edit', education)"> <PrimaryButton class="ml-4 bg-green-600 hover:bg-green-400">Edit</PrimaryButton></Link>
-                            <Link method="delete" :href="route('education.destroy', education)"> <PrimaryButton class="ml-4 bg-red-600 hover:bg-red-400">Delete</PrimaryButton></Link>
+                            <Link :href="route('education.edit', education)"> <font-awesome-icon class="text-green-500 mr-2" title="Edit" icon="fa-solid fa-pencil" /></Link>
+                            <Link method="delete" :href="route('education.destroy', education)"><font-awesome-icon title="Delete" class="text-red-500 ml-2" icon="fa-solid fa-trash-can" /></Link>
                         </td>
 
                     </tr>
@@ -67,13 +67,14 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Paginator from "@/Components/Paginator.vue";
+
 export default{
     components:{
     AuthenticatedLayout,
     Link,
     Head,
     PrimaryButton,
-    Paginator
+    Paginator,
     },
     props:{
         educations : Array

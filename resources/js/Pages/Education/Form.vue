@@ -206,9 +206,9 @@ export default {
 
     methods: {
         submit() {
-            if(this.education!==null)
+            if(this.education)
                 this.form.put(route("education.update", this.education));
-            else
+
             this.form.post(route("education.store"));
         },
     },
