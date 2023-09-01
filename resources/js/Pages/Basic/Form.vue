@@ -10,7 +10,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div
-                    class="bg-white overflow-hidden shadow-sm sm:rounded-lg sm:p-6 md:p-6 lg:p-8"
+                    class="bg-white overflow-hidden shadow-sm sm:rounded-2xl sm:p-6 md:p-6 lg:p-8"
                 >
                     <form @submit.prevent="submit" enctype="multipart/form-data">
                         <div class="lg:flex">

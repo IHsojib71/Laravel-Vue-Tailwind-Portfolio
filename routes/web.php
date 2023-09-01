@@ -49,8 +49,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
     Route::get('basic-information/edit', [BasicInformationController::class, 'edit'])->name('basic.edit');
     Route::post('basic-information/update', [BasicInformationController::class, 'update'])->name('basic.update');
 
-    Route::get('education/edit', [EducationController::class, 'edit'])->name('education.edit');
-    Route::post('education/update', [EducationController::class, 'update'])->name('education.update');
+
+    Route::resource('education', EducationController::class);
+
 
     Route::get('experience/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
     Route::post('experience/update', [ExperienceController::class, 'update'])->name('experience.update');

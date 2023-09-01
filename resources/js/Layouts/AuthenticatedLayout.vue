@@ -36,7 +36,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('basic.edit')" :active="route().current('basic.*')">
                                     Basic
                                 </NavLink>
-                                <NavLink :href="route('education.edit')" :active="route().current('education.*')">
+                                <NavLink :href="route('education.index')" :active="route().current('education.*')">
                                     Education
                                 </NavLink>
                                 <NavLink :href="route('experience.edit')" :active="route().current('experience')">
@@ -144,7 +144,7 @@ const showingNavigationDropdown = ref(false);
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('basic.edit')" :active="route().current('basic.*')">Basic</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('education.edit')" :active="route().current('education.*')">Education</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('education.index')" :active="route().current('education.*')">Education</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('experience.edit')" :active="route().current('experience.*')">Experience</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('research.edit')" :active="route().current('research.*')">Research</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('tests.edit')" :active="route().current('tests.*')">Tests</ResponsiveNavLink>

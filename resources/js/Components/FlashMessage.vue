@@ -43,7 +43,7 @@ export default {
         setTimeout(() => {
             if (this.show)
                 this.show = false;
-        }, 4000);
+        }, 2000);
     }
 }
 </script>
