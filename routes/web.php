@@ -47,31 +47,31 @@ Route::middleware('auth')->group(function () {
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
 
     Route::get('basic-information/edit', [BasicInformationController::class, 'edit'])->name('basic.edit');
-    Route::get('basic-information/update', [BasicInformationController::class, 'update'])->name('basic.update');
+    Route::post('basic-information/update', [BasicInformationController::class, 'update'])->name('basic.update');
 
     Route::get('education/edit', [EducationController::class, 'edit'])->name('education.edit');
-    Route::get('education/update', [EducationController::class, 'update'])->name('education.update');
+    Route::post('education/update', [EducationController::class, 'update'])->name('education.update');
 
     Route::get('experience/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
-    Route::get('experience/update', [ExperienceController::class, 'update'])->name('experience.update');
+    Route::post('experience/update', [ExperienceController::class, 'update'])->name('experience.update');
 
     Route::get('research/edit', [ResearchController::class, 'edit'])->name('research.edit');
-    Route::get('research/update', [ResearchController::class, 'update'])->name('research.update');
+    Route::post('research/update', [ResearchController::class, 'update'])->name('research.update');
 
     Route::get('tests/edit', [TestScoreController::class, 'edit'])->name('tests.edit');
-    Route::get('tests/update', [TestScoreController::class, 'update'])->name('tests.update');
+    Route::post('tests/update', [TestScoreController::class, 'update'])->name('tests.update');
 
     Route::get('project/edit', [ProjectController::class, 'edit'])->name('project.edit');
-    Route::get('project/update', [ProjectController::class, 'update'])->name('project.update');
+    Route::post('project/update', [ProjectController::class, 'update'])->name('project.update');
 
     Route::get('skill/edit', [SkillController::class, 'edit'])->name('skill.edit');
-    Route::get('skill/update', [SkillController::class, 'update'])->name('skill.update');
+    Route::post('skill/update', [SkillController::class, 'update'])->name('skill.update');
 
     Route::get('acheivement/edit', [AcheivementController::class, 'edit'])->name('acheivement.edit');
-    Route::get('acheivement/update', [ExperienceController::class, 'update'])->name('acheivement.update');
+    Route::post('acheivement/update', [ExperienceController::class, 'update'])->name('acheivement.update');
 
     Route::get('certification/edit', [CertificationController::class, 'edit'])->name('certification.edit');
-    Route::get('certification/update', [CertificationController::class, 'update'])->name('certification.update');
+    Route::post('certification/update', [CertificationController::class, 'update'])->name('certification.update');
 });
 
 require __DIR__.'/auth.php';
