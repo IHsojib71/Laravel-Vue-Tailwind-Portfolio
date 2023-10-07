@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('organization');
             $table->string('role');
-            $table->string('duration');
+            $table->string('start_date');
+            $table->string('end_date')->nullable();
             $table->string('milestones');
             $table->string('note')->nullable();
             $table->string('link')->nullable();

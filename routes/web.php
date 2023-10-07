@@ -53,8 +53,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
     Route::resource('education', EducationController::class);
 
 
-    Route::get('experience/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
-    Route::post('experience/update', [ExperienceController::class, 'update'])->name('experience.update');
+    Route::resource('experience', ExperienceController::class);
 
     Route::get('research/edit', [ResearchController::class, 'edit'])->name('research.edit');
     Route::post('research/update', [ResearchController::class, 'update'])->name('research.update');

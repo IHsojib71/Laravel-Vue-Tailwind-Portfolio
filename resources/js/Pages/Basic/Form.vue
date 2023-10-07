@@ -1,5 +1,5 @@
 <template>
-    <Head title="Basic Information" />
+    <Head title="Basic Information"/>
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="lg:flex">
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel for="name" value="Name" />
+                                <InputLabel for="name" value="Name"/>
 
                                 <TextInput
                                     type="text"
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel for="email" value="Email" />
+                                <InputLabel for="email" value="Email"/>
 
                                 <TextInput
                                     type="email"
@@ -95,7 +95,7 @@
                         </div>
                         <div class="lg:flex">
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel for="phone" value="Phone" />
+                                <InputLabel for="phone" value="Phone"/>
 
                                 <TextInput
                                     id="name"
@@ -114,7 +114,7 @@
                             </div>
 
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel for="github" value="Github Link" />
+                                <InputLabel for="github" value="Github Link"/>
 
                                 <TextInput
                                     type="text"
@@ -176,10 +176,10 @@
                         </div>
                         <div class="p-2">
                             <label for="formFile" class="mb-2 inline-block"
-                                >Image</label
+                            >Image</label
                             >
                             <input
-                                 @input="form.image = $event.target.files[0]"
+                                @input="form.image = $event.target.files[0]"
                                 class="relative m-0 block w-full min-w-0 flex-auto rounded cursor-pointer border border-slate-100 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
                                 type="file"
                             />
@@ -223,7 +223,8 @@ import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
-import { Head, Link, useForm } from "@inertiajs/vue3";
+import {Head, Link, useForm} from "@inertiajs/vue3";
+
 export default {
     components: {
         AuthenticatedLayout,

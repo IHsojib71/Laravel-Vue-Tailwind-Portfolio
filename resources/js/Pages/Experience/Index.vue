@@ -2,7 +2,7 @@
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Education Informations
+                Work Experience
             </h2>
         </template>
 
@@ -11,53 +11,48 @@
 
             <input class="rounded-2xl" v-model="search" type="text" name="search"  placeholder="search" />
 
-            <Link :href="route('education.create')">
+            <Link :href="route('experience.create')">
                 <PrimaryButton class="ml-4">Add new</PrimaryButton>
             </Link>
            </div>
 
-            <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
+            <table class="w-full border-collapse bg-white text-center text-sm text-gray-500 table-auto">
                 <thead class="bg-gray-50">
                 <tr>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Course Name</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Course Duration</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Passing Year</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Institute</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Result</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Course Works</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Organization</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Role</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Duration</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Milestones</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Note</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Link</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Action</th>
                 </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                    <tr v-for="(education, index) in educations.data" :key="index" class="hover:bg-gray-50">
-                        <td class="px-6 py-4">{{education.course_name}}</td>
-                        <td class="px-6 py-4">{{education.course_duration}}</td>
-                        <td class="px-6 py-4">{{education.passing_year}}</td>
-                        <td class="px-6 py-4">{{education.institute}}</td>
-                        <td class="px-6 py-4">{{education.result ? education.result : 'N/A'}}</td>
-                        <td class="px-6 py-4">{{education.course_works ? education.course_works : 'N/A'}}</td>
+                    <tr v-for="(experience, index) in experiences.data" :key="index" class="hover:bg-gray-50">
+                        <td class="px-6 py-4">{{experience.organization}}</td>
+                        <td class="px-6 py-4">{{experience.role}}</td>
+                        <td class="px-6 py-4">{{experience.start_date+' To '+experience.formatted_end_date}}</td>
+                        <td class="px-6 py-4">{{experience.milestones}}</td>
+                        <td class="px-6 py-4">{{experience.note ? experience.note : 'N/A'}}</td>
                         <td class="px-6 py-4">
-                            <a :href="education.link" target="_blank" v-if="education.link">
+                            <a :href="experience.link" target="_blank" v-if="experience.link">
                                 <font-awesome-icon class="mr-2" title="Click To Visit" icon="fa-solid fa-link" />
                             </a>
                             <span v-else>N/A</span>
                         </td>
                         <td class="d-flex">
-                            <Link :href="route('education.edit', education)"> <font-awesome-icon class="text-green-500 mr-2" title="Edit" icon="fa-solid fa-pencil" /></Link>
-                            <Link method="delete" :href="route('education.destroy', education)"><font-awesome-icon title="Delete" class="text-red-500 ml-2" icon="fa-solid fa-trash-can" /></Link>
+                            <Link :href="route('experience.edit', experience)"> <font-awesome-icon class="text-green-500 mr-2" title="Edit" icon="fa-solid fa-pencil" /></Link>
+                            <Link method="delete" :href="route('experience.destroy', experience)"><font-awesome-icon title="Delete" class="text-red-500 ml-2" icon="fa-solid fa-trash-can" /></Link>
                         </td>
-
                     </tr>
-
-
                 </tbody>
             </table>
 
         </div>
 
         <div class="max-w-7xl mx-auto flex justify-end">
-            <Paginator :links="educations.links"
+            <Paginator :links="experiences.links"
                        class="mt-4">
             </Paginator>
         </div>
@@ -82,7 +77,7 @@ export default{
     Paginator,
     },
     props:{
-        educations : Array
+        experiences : Array
     },
     data(){
         return {
@@ -91,7 +86,7 @@ export default{
     },
     watch :{
         search(val) {
-             this.$inertia.get(this.route('education.index'), {search : val} , {
+             this.$inertia.get(this.route('experience.index'), {search : val} , {
                 preserveScroll: true,
                 preserveState: true,
                 replace: true,

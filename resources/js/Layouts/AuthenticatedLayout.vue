@@ -39,7 +39,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('education.index')" :active="route().current('education.*')">
                                     Education
                                 </NavLink>
-                                <NavLink :href="route('experience.edit')" :active="route().current('experience')">
+                                <NavLink :href="route('experience.index')" :active="route().current('experience.*')">
                                    Experience
                                 </NavLink>
                                 <NavLink :href="route('research.edit')" :active="route().current('research.*')">
@@ -60,9 +60,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('certification.edit')" :active="route().current('certification.*')">
                                     Certifications
                                 </NavLink>
-                                
+
                             </div>
-                           
+
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -145,7 +145,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('basic.edit')" :active="route().current('basic.*')">Basic</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('education.index')" :active="route().current('education.*')">Education</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('experience.edit')" :active="route().current('experience.*')">Experience</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('experience.index')" :active="route().current('experience.*')">Experience</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('research.edit')" :active="route().current('research.*')">Research</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('tests.edit')" :active="route().current('tests.*')">Tests</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('project.edit')" :active="route().current('project.*')">Projects</ResponsiveNavLink>
@@ -154,7 +154,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('certification.edit')" :active="route().current('certification.*')">Certifications</ResponsiveNavLink>
                     </div>
 
-                    
+
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
