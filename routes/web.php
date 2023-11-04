@@ -55,9 +55,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
 
     Route::resource('experience', ExperienceController::class);
 
-    Route::get('research/edit', [ResearchController::class, 'edit'])->name('research.edit');
-    Route::post('research/update', [ResearchController::class, 'update'])->name('research.update');
-
     Route::get('tests/edit', [TestScoreController::class, 'edit'])->name('tests.edit');
     Route::post('tests/update', [TestScoreController::class, 'update'])->name('tests.update');
 
@@ -72,6 +69,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
 
     Route::get('certification/edit', [CertificationController::class, 'edit'])->name('certification.edit');
     Route::post('certification/update', [CertificationController::class, 'update'])->name('certification.update');
+
+    Route::resource('research', ResearchController::class);
 });
 
 require __DIR__.'/auth.php';
