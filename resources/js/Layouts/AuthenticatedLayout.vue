@@ -189,7 +189,13 @@ const showingNavigationDropdown = ref(false);
 
                 </div>
                 <slot />
+
+                
             </main>
+               
         </div>
+                <footer class="sticky bottom-0 text-center bg-white shadow-md">
+                      <span>Developed By <a href="https://www.linkedin.com/in/ihsojib-7a849a154/" target="_blank">Md Ismail Hossain</a></span>  
+                </footer>
     </div>
 </template>
