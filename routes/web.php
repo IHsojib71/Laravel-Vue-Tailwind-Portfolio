@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
     Route::post('certification/update', [CertificationController::class, 'update'])->name('certification.update');
     Route::resource('research', ResearchController::class);
     Route::resource('tests', TestScoreController::class);
+    Route::resource('project', ProjectController::class);
 });
 
 require __DIR__.'/auth.php';

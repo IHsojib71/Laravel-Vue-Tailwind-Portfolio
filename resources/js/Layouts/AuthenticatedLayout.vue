@@ -48,7 +48,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('tests.index')" :active="route().current('tests.*')">
                                     Tests
                                 </NavLink>
-                                <NavLink :href="route('project.edit')" :active="route().current('project.*')">
+                                <NavLink :href="route('project.index')" :active="route().current('project.*')">
                                     Projects
                                 </NavLink>
                                 <NavLink :href="route('skill.edit')" :active="route().current('skill.*')">
@@ -148,7 +148,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('experience.index')" :active="route().current('experience.*')">Experience</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('research.index')" :active="route().current('research.*')">Research</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('tests.index')" :active="route().current('tests.*')">Tests</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('project.edit')" :active="route().current('project.*')">Projects</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('project.index')" :active="route().current('project.*')">Projects</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('skill.edit')" :active="route().current('skill.*')">Skills</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('acheivement.edit')" :active="route().current('acheivement.*')">Acheivements</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('certification.edit')" :active="route().current('certification.*')">Certifications</ResponsiveNavLink>
