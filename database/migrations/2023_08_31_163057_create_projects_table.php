@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('duration');
             $table->string('description');
-            $table->string('github');
-            $table->string('live');
+            $table->string('github')->nullable();
+            $table->string('live')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             
         });
