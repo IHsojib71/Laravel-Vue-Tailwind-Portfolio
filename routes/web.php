@@ -51,15 +51,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
     Route::resource('experience', ExperienceController::class);
     Route::get('project/edit', [ProjectController::class, 'edit'])->name('project.edit');
     Route::post('project/update', [ProjectController::class, 'update'])->name('project.update');
-    Route::get('acheivement/edit', [AcheivementController::class, 'edit'])->name('acheivement.edit');
-    Route::post('acheivement/update', [ExperienceController::class, 'update'])->name('acheivement.update');
-    Route::get('certification/edit', [CertificationController::class, 'edit'])->name('certification.edit');
-    Route::post('certification/update', [CertificationController::class, 'update'])->name('certification.update');
     Route::resource('research', ResearchController::class);
     Route::resource('tests', TestScoreController::class);
     Route::resource('project', ProjectController::class);
     Route::get('skill/edit', [SkillController::class, 'edit'])->name('skill.edit');
     Route::post('skill/update', [SkillController::class, 'update'])->name('skill.update');
+    Route::resource('acheivement', AcheivementController::class)->except('show');
+    Route::resource('certification', CertificationController::class)->except('show');
+
 });
 
 require __DIR__.'/auth.php';

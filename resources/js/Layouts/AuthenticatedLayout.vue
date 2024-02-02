@@ -81,13 +81,13 @@ const showingNavigationDropdown = ref(false);
                                     Skills
                                 </NavLink>
                                 <NavLink
-                                    :href="route('acheivement.edit')"
+                                    :href="route('acheivement.index')"
                                     :active="route().current('acheivement.*')"
                                 >
                                     Acheivements
                                 </NavLink>
                                 <NavLink
-                                    :href="route('certification.edit')"
+                                    :href="route('certification.index')"
                                     :active="route().current('certification.*')"
                                 >
                                     Certifications
@@ -234,12 +234,12 @@ const showingNavigationDropdown = ref(false);
                             >Skills</ResponsiveNavLink
                         >
                         <ResponsiveNavLink
-                            :href="route('acheivement.edit')"
+                            :href="route('acheivement.index')"
                             :active="route().current('acheivement.*')"
                             >Acheivements</ResponsiveNavLink
                         >
                         <ResponsiveNavLink
-                            :href="route('certification.edit')"
+                            :href="route('certification.index')"
                             :active="route().current('certification.*')"
                             >Certifications</ResponsiveNavLink
                         >
