@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('languages')->nullable();
-            $table->string('frameworks')->nullable();
-            $table->string('softwares')->nullable();
-            $table->string('operating_systems')->nullable();
-            $table->string('databases')->nullable();
-            $table->string('extra')->nullable();
+            $table->text('languages')->nullable();
+            $table->text('frameworks')->nullable();
+            $table->text('softwares')->nullable();
+            $table->text('operating_systems')->nullable();
+            $table->text('databases')->nullable();
+            $table->text('extra')->nullable();
             $table->timestamps();
         });
     }

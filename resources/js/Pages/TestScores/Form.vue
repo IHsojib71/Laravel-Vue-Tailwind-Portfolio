@@ -12,13 +12,13 @@
                 <div
                     class="bg-white overflow-hidden shadow-sm sm:rounded-lg sm:p-6 md:p-6 lg:p-8"
                 >
-                    <form @submit.prevent="submit" enctype="multipart/form-data">
+                    <form
+                        @submit.prevent="submit"
+                        enctype="multipart/form-data"
+                    >
                         <div class="lg:flex">
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel
-                                    for="topic"
-                                    value="Topic"
-                                />
+                                <InputLabel for="topic" value="Topic" />
 
                                 <TextInput
                                     type="text"
@@ -35,10 +35,7 @@
                             </div>
 
                             <div class="lg:basis-1/2 p-2">
-                                <InputLabel
-                                    for="result"
-                                    value="Result"
-                                />
+                                <InputLabel for="result" value="Result" />
 
                                 <TextInput
                                     class="mt-1 block w-full"
@@ -55,29 +52,24 @@
                             </div>
                         </div>
                         <div class="lg:flex">
-                          
                             <div class="w-full p-2">
-                            <InputLabel for="description" value="Description" />
-                            <textarea
-                                class="mt-1 block w-full rounded border-slate-300"
-                                placeholder="Description"
-                                rows="6"
-                                v-model="form.description"
-                            >
-                            </textarea>
-                            <InputError
-                                class="mt-2"
-                                :message="form.errors.description"
-                            />
-                              </div>
-
-                           
+                                <InputLabel
+                                    for="description"
+                                    value="Description"
+                                />
+                                <textarea
+                                    class="mt-1 block w-full rounded border-slate-300"
+                                    placeholder="Description"
+                                    rows="6"
+                                    v-model="form.description"
+                                >
+                                </textarea>
+                                <InputError
+                                    class="mt-2"
+                                    :message="form.errors.description"
+                                />
+                            </div>
                         </div>
-                      
-
-                        
-
-
 
                         <div class="flex items-center justify-end mt-4 p-2">
                             <Link
@@ -96,7 +88,7 @@
                                 :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing"
                             >
-                                {{ testscore ? 'Update' : 'Create' }}
+                                {{ testscore ? "Update" : "Create" }}
                             </PrimaryButton>
                         </div>
                     </form>
@@ -133,17 +125,15 @@ export default {
                 topic: this.testscore ? this.testscore.topic : "",
                 result: this.testscore ? this.testscore.result : "",
                 description: this.testscore ? this.testscore.description : "",
-
             }),
         };
     },
 
     methods: {
         submit() {
-            if(this.testscore)
+            if (this.testscore)
                 this.form.put(this.route("tests.update", this.testscore));
-            else
-                this.form.post(this.route("tests.store"));
+            else this.form.post(this.route("tests.store"));
         },
     },
 };

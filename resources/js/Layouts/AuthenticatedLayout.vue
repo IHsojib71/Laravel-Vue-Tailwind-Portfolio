@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import { Link } from '@inertiajs/vue3';
-import FlashMessage from '@/Components/FlashMessage.vue';
+import { ref } from "vue";
+import ApplicationLogo from "@/Components/ApplicationLogo.vue";
+import Dropdown from "@/Components/Dropdown.vue";
+import DropdownLink from "@/Components/DropdownLink.vue";
+import NavLink from "@/Components/NavLink.vue";
+import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
+import { Link } from "@inertiajs/vue3";
+import FlashMessage from "@/Components/FlashMessage.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -29,40 +29,70 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                            <div
+                                class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
+                            >
+                                <NavLink
+                                    :href="route('dashboard')"
+                                    :active="route().current('dashboard')"
+                                >
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('basic.edit')" :active="route().current('basic.*')">
+                                <NavLink
+                                    :href="route('basic.edit')"
+                                    :active="route().current('basic.*')"
+                                >
                                     Basic
                                 </NavLink>
-                                <NavLink :href="route('education.index')" :active="route().current('education.*')">
+                                <NavLink
+                                    :href="route('education.index')"
+                                    :active="route().current('education.*')"
+                                >
                                     Education
                                 </NavLink>
-                                <NavLink :href="route('experience.index')" :active="route().current('experience.*')">
-                                   Experience
+                                <NavLink
+                                    :href="route('experience.index')"
+                                    :active="route().current('experience.*')"
+                                >
+                                    Experience
                                 </NavLink>
-                                <NavLink :href="route('research.index')" :active="route().current('research.*')">
+                                <NavLink
+                                    :href="route('research.index')"
+                                    :active="route().current('research.*')"
+                                >
                                     Research
                                 </NavLink>
-                                <NavLink :href="route('tests.index')" :active="route().current('tests.*')">
+                                <NavLink
+                                    :href="route('tests.index')"
+                                    :active="route().current('tests.*')"
+                                >
                                     Tests
                                 </NavLink>
-                                <NavLink :href="route('project.index')" :active="route().current('project.*')">
+                                <NavLink
+                                    :href="route('project.index')"
+                                    :active="route().current('project.*')"
+                                >
                                     Projects
                                 </NavLink>
-                                <NavLink :href="route('skill.edit')" :active="route().current('skill.*')">
-                                 Skills
+                                <NavLink
+                                    :href="route('skill.edit')"
+                                    :active="route().current('skill.*')"
+                                >
+                                    Skills
                                 </NavLink>
-                                <NavLink :href="route('acheivement.edit')" :active="route().current('acheivement.*')">
-                                   Acheivements
+                                <NavLink
+                                    :href="route('acheivement.edit')"
+                                    :active="route().current('acheivement.*')"
+                                >
+                                    Acheivements
                                 </NavLink>
-                                <NavLink :href="route('certification.edit')" :active="route().current('certification.*')">
+                                <NavLink
+                                    :href="route('certification.edit')"
+                                    :active="route().current('certification.*')"
+                                >
                                     Certifications
                                 </NavLink>
-
                             </div>
-
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -94,8 +124,16 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
+                                        <DropdownLink
+                                            :href="route('profile.edit')"
+                                        >
+                                            Profile
+                                        </DropdownLink>
+                                        <DropdownLink
+                                            :href="route('logout')"
+                                            method="post"
+                                            as="button"
+                                        >
                                             Log Out
                                         </DropdownLink>
                                     </template>
@@ -106,14 +144,23 @@ const showingNavigationDropdown = ref(false);
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
                             <button
-                                @click="showingNavigationDropdown = !showingNavigationDropdown"
+                                @click="
+                                    showingNavigationDropdown =
+                                        !showingNavigationDropdown
+                                "
                                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                             >
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <svg
+                                    class="h-6 w-6"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
                                     <path
                                         :class="{
                                             hidden: showingNavigationDropdown,
-                                            'inline-flex': !showingNavigationDropdown,
+                                            'inline-flex':
+                                                !showingNavigationDropdown,
                                         }"
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
@@ -123,7 +170,8 @@ const showingNavigationDropdown = ref(false);
                                     <path
                                         :class="{
                                             hidden: !showingNavigationDropdown,
-                                            'inline-flex': showingNavigationDropdown,
+                                            'inline-flex':
+                                                showingNavigationDropdown,
                                         }"
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
@@ -138,23 +186,64 @@ const showingNavigationDropdown = ref(false);
 
                 <!-- Responsive Navigation Menu -->
                 <div
-                    :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
+                    :class="{
+                        block: showingNavigationDropdown,
+                        hidden: !showingNavigationDropdown,
+                    }"
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('basic.edit')" :active="route().current('basic.*')">Basic</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('education.index')" :active="route().current('education.*')">Education</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('experience.index')" :active="route().current('experience.*')">Experience</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('research.index')" :active="route().current('research.*')">Research</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('tests.index')" :active="route().current('tests.*')">Tests</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('project.index')" :active="route().current('project.*')">Projects</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('skill.edit')" :active="route().current('skill.*')">Skills</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('acheivement.edit')" :active="route().current('acheivement.*')">Acheivements</ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('certification.edit')" :active="route().current('certification.*')">Certifications</ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('dashboard')"
+                            :active="route().current('dashboard')"
+                            >Dashboard</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('basic.edit')"
+                            :active="route().current('basic.*')"
+                            >Basic</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('education.index')"
+                            :active="route().current('education.*')"
+                            >Education</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('experience.index')"
+                            :active="route().current('experience.*')"
+                            >Experience</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('research.index')"
+                            :active="route().current('research.*')"
+                            >Research</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('tests.index')"
+                            :active="route().current('tests.*')"
+                            >Tests</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('project.index')"
+                            :active="route().current('project.*')"
+                            >Projects</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('skill.edit')"
+                            :active="route().current('skill.*')"
+                            >Skills</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('acheivement.edit')"
+                            :active="route().current('acheivement.*')"
+                            >Acheivements</ResponsiveNavLink
+                        >
+                        <ResponsiveNavLink
+                            :href="route('certification.edit')"
+                            :active="route().current('certification.*')"
+                            >Certifications</ResponsiveNavLink
+                        >
                     </div>
-
-
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
@@ -162,12 +251,20 @@ const showingNavigationDropdown = ref(false);
                             <div class="font-medium text-base text-gray-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
+                            <div class="font-medium text-sm text-gray-500">
+                                {{ $page.props.auth.user.email }}
+                            </div>
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
-                            <ResponsiveNavLink :href="route('logout')" method="post" as="button">
+                            <ResponsiveNavLink :href="route('profile.edit')">
+                                Profile
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink
+                                :href="route('logout')"
+                                method="post"
+                                as="button"
+                            >
                                 Log Out
                             </ResponsiveNavLink>
                         </div>
@@ -185,17 +282,20 @@ const showingNavigationDropdown = ref(false);
             <!-- Page Content -->
             <main>
                 <div class="max-w-2xl mx-auto my-2">
-                    <FlashMessage/>
-
+                    <FlashMessage />
                 </div>
                 <slot />
-
-                
             </main>
-               
         </div>
-                <footer class="sticky bottom-0 text-center bg-white shadow-md">
-                      <span>Developed By <a href="https://www.linkedin.com/in/ihsojib-7a849a154/" target="_blank">Md Ismail Hossain</a></span>  
-                </footer>
+        <footer class="sticky bottom-0 text-center bg-white shadow-md">
+            <span
+                >Developed By
+                <a
+                    href="https://www.linkedin.com/in/ihsojib-7a849a154/"
+                    target="_blank"
+                    >Md Ismail Hossain</a
+                ></span
+            >
+        </footer>
     </div>
 </template>
