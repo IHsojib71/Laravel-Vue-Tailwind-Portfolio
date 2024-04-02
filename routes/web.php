@@ -10,6 +10,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TestScoreController;
+use App\Models\Education;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,11 +27,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+
     ]);
 });
 
@@ -44,7 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::get('basic-information/edit', [BasicInformationController::class, 'edit'])->name('basic.edit');
     Route::post('basic-information/update', [BasicInformationController::class, 'update'])->name('basic.update');
     Route::resource('education', EducationController::class);
@@ -58,7 +59,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
     Route::post('skill/update', [SkillController::class, 'update'])->name('skill.update');
     Route::resource('acheivement', AcheivementController::class)->except('show');
     Route::resource('certification', CertificationController::class)->except('show');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
