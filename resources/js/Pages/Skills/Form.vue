@@ -173,6 +173,8 @@ export default {
                 this.form.put(this.route("skill.update", this.skill));
             else this.form.post(this.route("skill.store"));
         },
+
+      
     },
 };
 </script>

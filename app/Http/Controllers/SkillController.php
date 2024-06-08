@@ -12,7 +12,7 @@ class SkillController extends Controller
     {
         $skills = Skill::firstOrCreate([]);
         return inertia('Skills/Form', ['skill' => $skills]);
-       
+
     }
 
     public function update(SkillRequest $request, Skill $skill)
@@ -21,4 +21,6 @@ class SkillController extends Controller
         $skill->update($valid);
         return back()->with('success','Updated Successfully!');
     }
+
+
 }

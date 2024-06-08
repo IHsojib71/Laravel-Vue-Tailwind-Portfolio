@@ -11,169 +11,153 @@ components: {
 
 <template>
     <Head title="My Portfolio" />
-    <div class="font-sans leading-normal tracking-normal bg-gray-900">
-        <!-- Navbar -->
-        <nav class="bg-gray-800 p-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <a href="#" class="text-white font-bold text-xl">Your Name</a>
-                <ul class="flex">
-                    <li class="mr-6">
-                        <a href="#about" class="text-white hover:text-gray-400"
-                            >About</a
-                        >
-                    </li>
-                    <li class="mr-6">
-                        <a href="#skills" class="text-white hover:text-gray-400"
-                            >Skills</a
-                        >
-                    </li>
-                    <li class="mr-6">
-                        <a
-                            href="#projects"
-                            class="text-white hover:text-gray-400"
-                            >Projects</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            class="text-white hover:text-gray-400"
-                            >Contact</a
-                        >
-                    </li>
-                </ul>
+    <div class="bg-gray-100 text-gray-900">
+        <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold">Dr. Jane Doe</a>
+            <div class="hidden md:flex">
+                <a href="#education" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Education</a>
+                <a href="#experience" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Experience</a>
+                <a href="#publications" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Publications</a>
+                <a href="#skills" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Skills</a>
             </div>
-        </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#education" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Education</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Experience</a>
+            <a href="#publications" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Publications</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Skills</a>
+        </div>
+    </nav>
 
-        <!-- Hero Section -->
-        <header
-            class="hero-bg h-screen flex items-center justify-center text-white"
-        >
-            <div class="text-center">
-                <h1
-                    class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown"
-                >
-                    Welcome to My Portfolio
-                </h1>
-                <p
-                    class="text-lg md:text-xl animate__animated animate__fadeInUp"
-                >
-                    I'm a passionate developer ready to create amazing things.
-                </p>
+    <!-- Hero Section -->
+    <section id="hero" class="relative">
+        <img src="https://via.placeholder.com/1920x600" alt="Hero Image" class="w-full h-64 md:h-96 object-cover">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-3xl md:text-5xl font-bold">Dr. Jane Doe</h1>
+                <p class="text-lg md:text-xl mt-2">Professor of Computer Science</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-4 md:p-8 bg-white shadow-lg mt-8 md:mt-20">
+        <!-- Header -->
+        <header id="header" class="mb-8">
+            <div class="md:flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-4xl font-bold">Dr. Jane Doe</h1>
+                    <p class="text-lg text-gray-700">Professor of Computer Science</p>
+                </div>
+                <div class="text-right mt-4 md:mt-0">
+                    <p class="text-gray-700">Email: jane.doe@example.com</p>
+                    <p class="text-gray-700">Phone: (123) 456-7890</p>
+                    <p class="text-gray-700">Website: www.janedoe.com</p>
+                </div>
             </div>
         </header>
 
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-gray-800 text-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8">About Me</h2>
-                <p class="text-lg">
-                    I'm a skilled developer with a strong background in web
-                    development. I specialize in building responsive and
-                    user-friendly web applications.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-16 bg-gray-900 text-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8">My Skills</h2>
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        HTML/CSS
-                    </div>
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        JavaScript
-                    </div>
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        React.js
-                    </div>
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        Node.js
-                    </div>
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        Express.js
-                    </div>
-                    <div
-                        class="p-4 bg-gray-800 rounded-lg shadow-lg text-white"
-                    >
-                        MongoDB
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-16 bg-gray-800 text-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8">My Projects</h2>
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    <div
-                        class="bg-gray-900 rounded-lg overflow-hidden shadow-lg"
-                    >
-                        <img
-                            src="https://via.placeholder.com/500"
-                            alt="Project"
-                            class="w-full"
-                        />
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">
-                                Project Title
-                            </h3>
-                            <p class="text-gray-300">
-                                Project description goes here.
-                            </p>
+        <!-- Education -->
+        <section id="education" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Education</h2>
+            <ul class="list-none">
+                <li class="mb-4">
+                    <div class="md:flex justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">Ph.D. in Computer Science</h3>
+                            <p class="text-gray-700">University of Example, 2015</p>
                         </div>
+                        <span class="text-gray-700 mt-2 md:mt-0">2010 - 2015</span>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="mb-4">
+                    <div class="md:flex justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">M.Sc. in Computer Science</h3>
+                            <p class="text-gray-700">University of Example, 2010</p>
+                        </div>
+                        <span class="text-gray-700 mt-2 md:mt-0">2008 - 2010</span>
+                    </div>
+                </li>
+                <li class="mb-4">
+                    <div class="md:flex justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">B.Sc. in Computer Science</h3>
+                            <p class="text-gray-700">University of Example, 2008</p>
+                        </div>
+                        <span class="text-gray-700 mt-2 md:mt-0">2004 - 2008</span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
-        <!-- section education -->
-        <section id="education" class="py-16 bg-gray-900 text-white">
-
-            <Timeline :timeline="educations" />
+        <!-- Experience -->
+        <section id="experience" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+            <ul class="list-none">
+                <li class="mb-4">
+                    <div class="md:flex justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">Professor of Computer Science</h3>
+                            <p class="text-gray-700">University of Example</p>
+                        </div>
+                        <span class="text-gray-700 mt-2 md:mt-0">2018 - Present</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">Description of responsibilities and achievements in this role.</p>
+                </li>
+                <li class="mb-4">
+                    <div class="md:flex justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">Associate Professor</h3>
+                            <p class="text-gray-700">University of Example</p>
+                        </div>
+                        <span class="text-gray-700 mt-2 md:mt-0">2015 - 2018</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">Description of responsibilities and achievements in this role.</p>
+                </li>
+            </ul>
         </section>
-        <!-- Contact Section -->
-        <section id="contact" class="bg-gray-900 py-16 text-white">
-            <ContactForm />
+
+        <!-- Publications -->
+        <section id="publications" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Publications</h2>
+            <ul class="list-none">
+                <li class="mb-4">
+                    <h3 class="text-xl font-semibold">Title of Paper</h3>
+                    <p class="text-gray-700">Journal Name, Year</p>
+                </li>
+                <li class="mb-4">
+                    <h3 class="text-xl font-semibold">Title of Paper</h3>
+                    <p class="text-gray-700">Journal Name, Year</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>Programming Languages: Python, Java, C++</li>
+                <li>Data Analysis and Visualization</li>
+                <li>Machine Learning and Artificial Intelligence</li>
+                <li>Research and Academic Writing</li>
+            </ul>
         </section>
 
         <!-- Footer -->
-        <Footer />
-        <footer class="bg-gray-800 text-white text-center py-4">
-            &copy; 2024 Your Portfolio. All rights reserved To Md Ismail Hossain
-            | Designed with Love
+        <footer class="mt-8">
+            <p class="text-center text-gray-600">&copy; 2024 Dr. Jane Doe. All rights reserved.</p>
         </footer>
+    </div>
+
     </div>
 </template>
 
-<style scoped>
-/* Additional custom styles */
-/* Hero Section */
-.hero-bg {
-    background-image: url("https://source.unsplash.com/1600x900/?coding,technology");
-    background-size: cover;
-    background-position: center;
-}
-
-/* Footer */
-footer a:hover {
-    color: #4b5563;
-}
-</style>

@@ -1,19 +1,27 @@
 <?php
 
-use App\Http\Controllers\AcheivementController;
-use App\Http\Controllers\BasicInformationController;
-use App\Http\Controllers\CertificationController;
-use App\Http\Controllers\EducationController;
-use App\Http\Controllers\ExperienceController;
+use Inertia\Inertia;
+use App\Models\Project;
+use App\Models\Research;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\BasicInformation;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ResearchController;
-use App\Http\Controllers\SkillController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\TestScoreController;
-use App\Models\Education;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\AcheivementController;
+use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\BasicInformationController;
+use App\Models\Acheivement;
+use App\Models\Certification;
+use App\Models\Skill;
+use App\Models\TestScore;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +35,28 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    $basicInformations = BasicInformation::all();
+    $educations = Education::all();
+    $experiences = Experience::all();
+    $researches=Research::all();
+    $tests = TestScore::all();
+    $projects=Project::all();
+    $skills = Skill::all();
+    $acheivements = Acheivement::all();
+    $certifications = Certification::all();
 
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'basicInformations' => $basicInformations,
+        'educations' => $educations,
+        'experiences' => $experiences,
+        'researches' => $researches,
+        'tests' => $tests,
+        'projects' => $projects,
+        'skills' => $skills,
+        'acheivements' => $acheivements,
+        'certifications' => $certifications,
 
     ]);
 });
