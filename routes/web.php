@@ -35,7 +35,7 @@ use App\Models\TestScore;
 */
 
 Route::get('/', function () {
-    $basicInformations = BasicInformation::all();
+    $basicInformations = BasicInformation::first();
     $educations = Education::all();
     $experiences = Experience::all();
     $researches=Research::all();
