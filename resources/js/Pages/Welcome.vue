@@ -65,21 +65,23 @@
                 <li class="mb-4" v-for="(education, index) in educations" :key="index">
                     <div class="md:flex justify-between">
                         <div>
-                            <h3 class="text-xl font-semibold">{{ education.course_name }}</h3>
-                            <p class="text-gray-700 font-semibold">Result : {{ education.result }}</p>
-                            <p class="text-gray-700">{{ education.institute }}, {{ education.passing_year }}</p>
+                            <h3 class="text-xl font-bold">{{ education.course_name }}</h3>
+                            <p class="text-gray-700 font-bold">Result : {{ education.result }}</p>
+                            <p class="text-gray-700">{{ education.institute }}</p>
+                            <p class="font-semibold">Passing Year :{{ education.passing_year }}</p>
                         </div>
-                        <span class="text-gray-700 mt-2 md:mt-0">{{ education.course_duration }}</span>
+                        <span class="text-gray-700 mt-2 md:mt-0">Duration : {{ education.course_duration }}</span>
                     </div>
+                    <hr class="my-2">
                 </li>
 
             </ul>
         </section>
-        <hr class="mb-4">
+
 
         <!-- Experience -->
         <section id="experience" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+            <h2 class="text-4xl font-semibold mb-4">Experience</h2>
             <ul class="list-none">
                 <li class="mb-4" v-for="(experience,index) in experiences" :key="index">
                     <div class="md:flex justify-between">
@@ -90,23 +92,29 @@
                         <span class="text-gray-700 mt-2 md:mt-0">{{ experience.start_date }} - {{ experience.end_date ? experience.end_date : 'Present'}}</span>
                     </div>
                     <p class="text-gray-600 mt-2">Milestones : {{ experience.milestones }}</p>
-                    <p class="text-gray-600 mt-2">{{ experience.note }}</p>
+
+                    <blockquote class="border-l-4 border-gray-200 pl-4 italic">{{ experience.note }}</blockquote>
+
+                    <hr class="my-2">
                 </li>
             </ul>
         </section>
         <hr class="mb-4">
         <!-- Publications -->
         <section id="publications" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Publications</h2>
+            <h2 class="text-4xl font-semibold mb-4">Publications</h2>
             <ul class="list-none">
-                <li class="mb-4">
-                    <h3 class="text-xl font-semibold">Title of Paper</h3>
-                    <p class="text-gray-700">Journal Name, Year</p>
+                <li class="mb-4" v-for="(research,index) in researches" :key="index">
+                    <h3 class="text-xl font-semibold">{{ research.title }}</h3>
+                    <p class="text-gray-700">{{ research.sub_title }}</p>
+                    <p>{{ research.teachers }}</p>
+                    <p class="text-justify italic border-l-4 border-gray-200">{{ research.description }}</p>
+                    <br>
+                    <a class="bg-black text-white p-2 rounded-xl mt-4" target="_blank" href="{{ research.link }}">Click To Visit</a>
+                    <br>
+                   
                 </li>
-                <li class="mb-4">
-                    <h3 class="text-xl font-semibold">Title of Paper</h3>
-                    <p class="text-gray-700">Journal Name, Year</p>
-                </li>
+
             </ul>
         </section>
 
