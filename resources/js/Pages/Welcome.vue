@@ -1,11 +1,11 @@
 
 
 <template>
-    <Head title="My Portfolio" />
+    <Head :title="basicInformations.name" />
     <div class="bg-gray-100 text-gray-900">
         <nav class="bg-white shadow-lg fixed w-full z-10">
         <div class="container mx-auto p-4 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-bold">{{ basicInformations ? basicInformations.name : 'No Name' }}</a>
+            <a href="/" class="text-xl font-bold">{{ basicInformations ? basicInformations.name : 'No Name' }}</a>
             <div class="hidden md:flex">
                 <a href="#education" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Education</a>
                 <a href="#experience" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Experience</a>
@@ -258,7 +258,11 @@
 </template>
 
 <script>
+import { Head } from '@inertiajs/vue3';
 export default {
+    components: {
+        Head
+    },
     props: {
     basicInformations : Object,
     educations : Array,
