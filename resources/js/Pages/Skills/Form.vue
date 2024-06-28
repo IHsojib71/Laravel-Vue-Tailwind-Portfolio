@@ -170,11 +170,11 @@ export default {
     methods: {
         submit() {
             if (this.skill)
-                this.form.put(this.route("skill.update", this.skill));
+                this.form.post(this.route("skill.update", this.skill));
             else this.form.post(this.route("skill.store"));
         },
 
-      
+
     },
 };
 </script>

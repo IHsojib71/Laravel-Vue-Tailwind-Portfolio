@@ -26,7 +26,7 @@ class ProjectRequest extends FormRequest
             'duration' => ['required', 'string', 'max:255'],
             'github' => ['nullable', 'string', 'max:255'],
             'live' => ['nullable', 'string', 'max:255'],
-            'description' => ['nullable'],
+            'description' => ['nullable', 'max:255'],
             'image' => ['nullable','image','max:2048'],
         ];
     }

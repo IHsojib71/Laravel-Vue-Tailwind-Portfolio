@@ -41,7 +41,7 @@ Route::get('/', function () {
     $researches=Research::all();
     $tests = TestScore::all();
     $projects=Project::all();
-    $skills = Skill::all();
+    $skills = Skill::first();
     $acheivements = Acheivement::all();
     $certifications = Certification::all();
 

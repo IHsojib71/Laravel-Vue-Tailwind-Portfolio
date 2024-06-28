@@ -11,12 +11,24 @@ class Experience extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['formatted_end_date'];
+    protected $appends = ['formatted_start_date','formatted_end_date'];
+
+    public function getFormattedStartDateAttribute() : ?string
+    {
+        if($this->start_date)
+            return date('F j, Y', strtotime($this->start_date));
+
+        return null;
+    }
 
     public function getFormattedEndDateAttribute() : ?string
     {
         if($this->end_date)
-            return $this->end_date;
+         return date('F j, Y', strtotime($this->end_date));
+
         return 'Present';
     }
+
+
+
 }
