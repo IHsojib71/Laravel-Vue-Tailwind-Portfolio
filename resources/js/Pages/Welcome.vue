@@ -13,6 +13,8 @@
                 <a href="#skills" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Skills</a>
                 <a href="#tests" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Tests</a>
                 <a href="#projects" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Projects</a>
+                <a href="#certifications" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Certifications</a>
+                <a href="#acheivements" class="mx-2 lg:mx-4 text-gray-700 hover:text-gray-900">Acheivements</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-gray-700 hover:text-gray-900 focus:outline-none">
@@ -29,12 +31,14 @@
             <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Skills</a>
             <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Tests</a>
             <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Projects</a>
+            <a href="#certifications" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Certifications</a>
+            <a href="#acheivements" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Acheivements</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="relative">
-        <img src="https://via.placeholder.com/1920x600" alt="Hero Image" class="w-full h-64 md:h-96 object-cover">
+        <img :src="basicInformations.image" alt="Hero Image" class="w-full h-64 md:h-96 object-cover">
         <div class="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
             <div class="text-center text-white">
                 <h1 class="text-3xl md:text-5xl font-bold">{{ basicInformations ? basicInformations.name : 'No Name' }}</h1>
@@ -53,10 +57,18 @@
                     <p class="text-lg text-gray-700">{{ basicInformations ? basicInformations.site_sub_title : 'No sub title' }}</p>
                 </div>
                 <div class="text-right mt-4 md:mt-0">
-                    <p class="text-gray-700">Email: {{  basicInformations ? basicInformations.email : 'No email' }}</p>
-                    <p class="text-gray-700">Phone: {{ basicInformations ? basicInformations.phone : 'No phone' }}</p>
-                    <p class="text-gray-700">
-                    </p>
+                    <p class="text-gray-700"><font-awesome-icon icon="envelope" /> Email: {{  basicInformations ? basicInformations.email : 'No email' }}</p>
+                    <p class="text-gray-700"><font-awesome-icon icon="phone-volume" /> Phone: {{ basicInformations ? basicInformations.phone : 'No phone' }}</p>
+
+                    <div class="flex space-x-4">
+                        <a :href="basicInformations.github" target="_blank">
+                            <font-awesome-icon icon="github" /><span class="text-blue-500">Github</span></a>
+                        <a :href="basicInformations.linkedin" target="_blank">
+                        <span class="text-blue-500"><font-awesome-icon icon="linkedin" />Linkedin</span></a>
+                        <a :href="basicInformations.twitter" target="_blank">
+                     <span class="text-blue-500">Twitter</span></a>
+                    </div>
+
 
                 </div>
             </div>
@@ -113,7 +125,7 @@
                     <p>{{ research.teachers }}</p>
                     <p class="text-justify italic border-l-4 border-gray-200">{{ research.description }}</p>
                     <br>
-                    <a class="bg-black text-white p-2 rounded-xl mt-4" target="_blank" href="{{ research.link }}">Click To Visit</a>
+                    <a class="text-blue-500 p-2 rounded-xl mt-4" target="_blank" href="{{ research.link }}">Click To Visit</a>
                     <br>
                     <hr class="my-4">
                 </li>
@@ -152,21 +164,21 @@
 
             </ul>
         </section>
-
+<!-- projects -->
         <section class="py-6" id="projects">
             <h2 class="text-4xl font-semibold mb-4">Projects</h2>
 
 	<div class="container flex flex-col justify-center p-4 mx-auto">
 
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 sm:grid-cols-2">
 			<div class="object-cover w-full border-2 rounded-2xl p-4" v-for="(project,index) in projects" :key="index">
             <img :src="'/'+project.image" alt="" class="w-[300px] mx-auto">
             <p class="text-xl font-bold">{{ project.title }}</p>
             <p>{{ project.duration }}</p>
             <p class="text-wrap text-justify">{{ project.description }}</p>
             <div class="flex justify-between my-2">
-                <a :href="project.github" class="text-blue-500">Github</a>
-                <a :href="project.live" class="text-blue-500">Live</a>
+                <a :href="project.github" class="text-blue-500" target="_blank">Github</a>
+                <a :href="project.live" class="text-blue-500" target="_blank">Live</a>
             </div>
          </div>
 
@@ -174,9 +186,71 @@
 	</div>
 </section>
 
+<!-- Certifications -->
+
+<section class="py-6" id="certifications">
+            <h2 class="text-4xl font-semibold mb-4">Certifications</h2>
+
+	<div class="container flex flex-col justify-center p-4 mx-auto">
+
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 sm:grid-cols-2">
+			<div class="object-cover w-full border-2 rounded-2xl p-4" v-for="(certificate,index) in certifications" :key="index">
+                <div class="container flex flex-col items-center p-4 mx-auto space-y-6 md:p-8">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-16 h-16 dark:text-violet-600">
+			<polygon points="328.375 384 332.073 458.999 256.211 406.28 179.924 459.049 183.625 384 151.586 384 146.064 496 182.756 496 256.169 445.22 329.242 496 365.936 496 360.414 384 328.375 384"></polygon>
+			<path d="M415.409,154.914l-2.194-48.054L372.7,80.933,346.768,40.414l-48.055-2.2L256,16.093,213.287,38.219l-48.055,2.2L139.3,80.933,98.785,106.86l-2.194,48.054L74.464,197.628l22.127,42.715,2.2,48.053L139.3,314.323l25.928,40.52,48.055,2.195L256,379.164l42.713-22.126,48.055-2.195,25.928-40.52L413.214,288.4l2.195-48.053,22.127-42.715Zm-31.646,76.949L382,270.377l-32.475,20.78-20.78,32.475-38.515,1.76L256,343.125l-34.234-17.733-38.515-1.76-20.78-32.475L130,270.377l-1.759-38.514L110.5,197.628,128.237,163.4,130,124.88,162.471,104.1l20.78-32.474,38.515-1.76L256,52.132l34.234,17.733,38.515,1.76,20.78,32.474L382,124.88l1.759,38.515L401.5,197.628Z"></path>
+		</svg>
+		<p class="text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl xl:max-w-4xl dark:text-gray-700">{{ certificate.title }}</p>
+        <p class="text-center">{{ certificate.issue_date }}</p>
+
+		<div class="flex justify-center space-x-3">
+
+			<div class="text-center">
+                <p class="text-justify italic">{{ certificate.description }}</p>
+				<a class="py-2 space-x-1 text-sm text-blue-500" :href="certificate.link">
+					<span>View Certificate</span>
+
+				</a>
+			</div>
+		</div>
+	</div>
+            </div>
+         </div>
+
+		</div>
+
+</section>
+
+<!-- Acheivements -->
+<section class="" id="acheivements">
+    <h2 class="text-4xl font-semibold mb-4">Acheivements</h2>
+	<div class="py-12 mx-auto border-2 rounded-2xl">
+		<div class="grid gap-4 mx-4 sm:grid-cols-12">
+			<div class="col-span-12 sm:col-span-3">
+				<div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-violet-600">
+					<h3 class="text-3xl font-semibold">My Acheivements</h3>
+					<span class="text-sm font-bold tracking-wider uppercase dark:text-gray-600">Check my acheivements here</span>
+				</div>
+			</div>
+			<div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
+				    <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-300">
+				    <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-600" v-for="(acheivement,index) in acheivements" :key="index">
+						<h3 class="text-xl font-semibold tracking-wide">{{ acheivement.title }}</h3>
+						<time class="text-xs tracking-wide uppercase dark:text-gray-600">{{ acheivement.date }}</time>
+						<p class="mt-3">{{ acheivement.description }}</p>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
         <!-- Footer -->
         <footer class="mt-8">
-            <p class="text-center text-gray-600">&copy; 2024 Dr. Jane Doe. All rights reserved.</p>
+            <p class="text-center text-gray-600">Copyright &copy; 2024 All rights reserved.</p>
         </footer>
     </div>
 
