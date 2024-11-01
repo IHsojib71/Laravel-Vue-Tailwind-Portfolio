@@ -59,6 +59,10 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('certification.*')">
                                     Certifications
                                 </NavLink>
+                                <NavLink :href="route('post.index')"
+                                    :active="route().current('post.*')">
+                                    Blog Posts
+                                </NavLink>
                             </div>
                         </div>
 
@@ -148,6 +152,9 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('certification.index')"
                             :active="route().current('certification.*')">
                             Certifications</ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('post.index')"
+                            :active="route().current('post.*')">
+                            Blog Posts</ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->

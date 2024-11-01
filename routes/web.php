@@ -18,6 +18,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\AcheivementController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\BasicInformationController;
+use App\Http\Controllers\PostController;
 use App\Models\Acheivement;
 use App\Models\Certification;
 use App\Models\Skill;
@@ -85,6 +86,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::post('skill/update', [SkillController::class, 'update'])->name('skill.update');
     Route::resource('acheivement', AcheivementController::class)->except('show');
     Route::resource('certification', CertificationController::class)->except('show');
+    Route::resource('post', PostController::class);
 });
 
 require __DIR__ . '/auth.php';
